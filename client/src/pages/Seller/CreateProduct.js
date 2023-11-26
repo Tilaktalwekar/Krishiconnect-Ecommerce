@@ -7,6 +7,9 @@ import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
 const { Option } = Select;
 const CreateProduct = () => {
+  const storedUserJSON = localStorage.getItem("auth");
+  const users = JSON.parse(storedUserJSON);
+  console.log(users.user.email);
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
@@ -45,6 +48,8 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+      productData.append("sellerId", users.user.email);
+
       const { data } = axios.post(
         "/api/v1/product/create-product",
         productData
