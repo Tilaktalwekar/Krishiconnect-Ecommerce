@@ -39,3 +39,29 @@ Clone the repository and install dependencies:
 git clone https://github.com/yourusername/krishiconnect.git
 cd krishiconnect
 npm install
+
+Configuration
+Create a .env file in the root directory and add necessary environment variables such as database connection strings, secret keys, etc.
+
+Usage
+Start the backend server:
+
+bash
+Copy code
+npm run server
+Start the React frontend:
+
+bash
+Copy code
+npm run client
+Visit http://localhost:3000 in your browser to access the KrishiConnect app.
+
+Contributing
+Contributions are welcome! If you have suggestions, bug reports, or feature requests, feel free to open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License.
+
+KrishiConnect aims to streamline agricultural product transactions. Join us in building a platform that empowers farmers and agricultural communities worldwide!
+
+For support or inquiries, contact us at Tilaktalwekar@gmail.com.
