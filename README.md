@@ -35,15 +35,17 @@ KrishiConnect simplifies the process of agricultural product transactions, conne
 
 Clone the repository and install dependencies:
 
-```bash
+ block:
+
+bash
+Copy code
 git clone https://github.com/yourusername/krishiconnect.git
 cd krishiconnect
 npm install
-
-Configuration
+Configuration:
 Create a .env file in the root directory and add necessary environment variables such as database connection strings, secret keys, etc.
 
-Usage
+Usage:
 Start the backend server:
 
 bash
@@ -52,6 +54,15 @@ npm run server
 Start the React frontend:
 
 bash
+Copy code
+npm run client
+By placing your text after the code block, it will appear outside the code block in the rendered Markdown.
+
+
+
+
+
+
 Copy code
 npm run client
 Visit http://localhost:3000 in your browser to access the KrishiConnect app.
