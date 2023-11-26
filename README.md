@@ -1,5 +1,3 @@
-# Krishiconnect-Ecommerce
-KrishiConnect: MERN-powered e-commerce for agriculture. Buy seeds, machinery, and more. Empowers farmers with sales dashboards. Secure transactions. Community forums for agricultural enthusiasts. Revolutionizing farming commerce worldwide!
 # KrishiConnect - MERN E-commerce App for Agricultural Products
 
 KrishiConnect is a full-stack e-commerce application built using the MERN stack, dedicated to serving the agricultural community by providing a seamless platform for buying and selling agricultural products.
@@ -35,17 +33,14 @@ KrishiConnect simplifies the process of agricultural product transactions, conne
 
 Clone the repository and install dependencies:
 
- block:
-
-bash
-Copy code
+```bash
 git clone https://github.com/yourusername/krishiconnect.git
 cd krishiconnect
 npm install
-Configuration:
+Configuration
 Create a .env file in the root directory and add necessary environment variables such as database connection strings, secret keys, etc.
 
-Usage:
+Usage
 Start the backend server:
 
 bash
@@ -54,15 +49,6 @@ npm run server
 Start the React frontend:
 
 bash
-Copy code
-npm run client
-By placing your text after the code block, it will appear outside the code block in the rendered Markdown.
-
-
-
-
-
-
 Copy code
 npm run client
 Visit http://localhost:3000 in your browser to access the KrishiConnect app.
@@ -75,4 +61,4 @@ This project is licensed under the MIT License.
 
 KrishiConnect aims to streamline agricultural product transactions. Join us in building a platform that empowers farmers and agricultural communities worldwide!
 
-For support or inquiries, contact us at Tilaktalwekar@gmail.com.
+For support or inquiries, contact us at tilaktalwekar@gmail.com.
