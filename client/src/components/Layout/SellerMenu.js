@@ -31,6 +31,12 @@ const SellerMenu = () => {
           >
             Order Request
           </NavLink>
+          <NavLink
+            to="/dashboard/Seller/myorder"
+            className="list-group-item list-group-item-action"
+          >
+            My Order
+          </NavLink>
           {/* <NavLink
           to="/dashboard/Seller/users"
           className="list-group-item list-group-item-action"
