@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
+import { useAuth } from "../context/auth";
+
 import { useCart } from "../context/cart";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -10,6 +12,8 @@ import { AiOutlineReload } from "react-icons/ai";
 import "../styles/Homepage.css";
 const HomePage = () => {
   const navigate = useNavigate();
+  const [auth, setAuth] = useAuth();
+
   const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -153,7 +157,7 @@ const HomePage = () => {
         <div className="col-md-9 ">
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
+            {products?.filter((p) => p.sellerId !== (auth?.user?.email)).map((p) => (
               <div className="card m-2" key={p._id}>
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
