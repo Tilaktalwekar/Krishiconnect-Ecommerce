@@ -23,6 +23,7 @@ const SellerOrders = () => {
     try {
       const { data } = await axios.get("/api/v1/auth/all-orders");
       setOrders(data);
+      // console.log(data._id)
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +51,7 @@ const SellerOrders = () => {
         </div>
         <div className="col-md-9">
           <h1 className="text-center">All Orders</h1>
-          {orders?.map((o, i) => {
+          {orders?.filter((o) => o?.buyer?._id !== (auth?.user?.id)).map((o, i) => {
             return (
               <div className="border shadow">
                 <table className="table">
