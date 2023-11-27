@@ -1,4 +1,4 @@
-import React,{useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -11,17 +11,17 @@ const Login = () => {
   const [auth, setAuth] = useAuth();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  
+
   // const value1 = queryParams.get('value1');
   // const value2 = queryParams.get('value2');
   const navigate = useNavigate();
 
-//   useEffect(()=>{
-    
-//      if(value1 && value2){
-//       handleSubmit();
-//      }
-//  },[value1,value2])
+  //   useEffect(()=>{
+
+  //      if(value1 && value2){
+  //       handleSubmit();
+  //      }
+  //  },[value1,value2])
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +30,7 @@ const Login = () => {
         email,
         password,
       });
+      console.log(res.data);
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
         setAuth({
@@ -96,7 +97,5 @@ const Login = () => {
     </Layout>
   );
 };
-
-
 
 export default Login;

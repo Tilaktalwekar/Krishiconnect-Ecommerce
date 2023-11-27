@@ -29,7 +29,7 @@ const SellerMenu = () => {
             to="/dashboard/Seller/orders"
             className="list-group-item list-group-item-action"
           >
-            Orders
+            Order Request
           </NavLink>
           {/* <NavLink
           to="/dashboard/Seller/users"

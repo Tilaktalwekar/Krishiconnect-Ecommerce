@@ -363,6 +363,7 @@ export const brainTreePaymentController = async (req, res) => {
             products: cart,
             payment: result,
             buyer: req.user._id,
+            // email:req.user._id,
           }).save();
           res.json({ ok: true });
         } else {
