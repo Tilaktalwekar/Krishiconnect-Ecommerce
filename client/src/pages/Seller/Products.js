@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import SellerMenu from "../../components/Layout/SellerMenu";
+import { useAuth } from "../../context/auth";
+
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import "../../styles/Homepage.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
-
+  const [auth, setAuth] = useAuth();
   //getall products
   const getAllProducts = async () => {
     try {
@@ -32,7 +34,7 @@ const Products = () => {
         <div className="col-md-9 ">
           <h1 className="text-center">All Products List</h1>
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
+          {products?.filter((p) => p.sellerId === (auth?.user?.email)).map((p) => (
               <Link
                 key={p._id}
                 to={`/dashboard/seller/product/${p.slug}`}
