@@ -106,14 +106,17 @@ const CartPage = () => {
           <div className="row ">
             <div className="col-md-7  p-0 m-0">
               {cart?.map((p) => (
-                <div className="row card flex-row" key={p._id}>
+                <div
+                  className="row card flex-row shadow justify-content-center align-items-center"
+                  key={p._id}
+                >
                   <div className="col-md-4">
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
-                      className="card-img-top"
+                      className="card-img-top "
                       alt={p.name}
                       width="100%"
-                      height={"130px"}
+                      height={"170px"}
                     />
                   </div>
                   <div className="col-md-4">
@@ -132,7 +135,7 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
-            <div className="col-md-5 cart-summary ">
+            <div className="col-md-4 mx-5 cart-summary shadow mt-3 mb-3 ">
               <h2>Cart Summary</h2>
               <p>Total | Checkout | Payment</p>
               <hr />
@@ -189,7 +192,7 @@ const CartPage = () => {
                     />
 
                     <button
-                      className="btn btn-primary"
+                      className="btn btn-primary mb-3"
                       onClick={handlePayment}
                       disabled={loading || !instance || !auth?.user?.address}
                     >
