@@ -117,13 +117,24 @@ const HomePage = () => {
         className="banner-img"
         alt="bannerimage"
         width={"100%"}
-        
       />
       {/* banner image */}
-      <div className="container-fluid row mt-3 home-page" >
-        <div className="col-md-3 filters" >
-          <h4 className="text-center" style={{backgroundColor:"rgba(128, 128, 128, 0.097)" , padding:"10px"}}>Filter By Category</h4>
-          <div className="d-flex flex-column " style={{borderRight:"3px solid rgba(128, 128, 128, 0.097)" }}>
+      <div className="container-fluid row mt-3 home-page">
+        <div className="col-md-3 filters">
+          <h4
+            className="text-center "
+            style={{
+              backgroundColor: "#1c8c59",
+              color: "white",
+              padding: "10px",
+            }}
+          >
+            Filter By Category
+          </h4>
+          <div
+            className="d-flex flex-column "
+            style={{ borderRight: "3px solid rgba(128, 128, 128, 0.097)" }}
+          >
             {categories?.map((c) => (
               <Checkbox
                 key={c._id}
@@ -134,8 +145,21 @@ const HomePage = () => {
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4" style={{backgroundColor:"rgba(128, 128, 128, 0.097)" , padding:"10px"}}>Filter By Price</h4>
-          <div className="d-flex flex-column" style={{borderRight:"3px solid rgba(128, 128, 128, 0.097)" }}>
+          <h4
+            className="text-center mt-4"
+            style={{
+              backgroundColor: "#1c8c59",
+              color: "white !important",
+              fontWeight: "550 !important",
+              padding: "10px",
+            }}
+          >
+            Filter By Price
+          </h4>
+          <div
+            className="d-flex flex-column"
+            style={{ borderRight: "3px solid rgba(128, 128, 128, 0.097)" }}
+          >
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
                 <div key={p._id}>
@@ -146,61 +170,65 @@ const HomePage = () => {
           </div>
           <div className="d-flex flex-column">
             <button
-              className="btn btn-danger"
+              className="btn btn-success"
               onClick={() => window.location.reload()}
-              style={{padding:"10px"}}
+              style={{ padding: "10px", marginBottom: "10px" }}
             >
               RESET FILTERS
             </button>
           </div>
         </div>
         <div className="col-md-9 ">
-          <h1 className="text-center">All Products</h1>
-          <div className="d-flex flex-wrap">
-            {products?.filter((p) => p.sellerId !== (auth?.user?.email)).map((p) => (
-              <div className="card m-2" key={p._id}>
-                <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
-                  alt={p.name}
-                />
-                <div className="card-body">
-                  <div className="card-name-price">
-                    <h5 className="card-title">{p.name.substring(0, 20)}...</h5>
-                    <h5 className="card-title card-price">
-                      {p.price.toLocaleString("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                      })}
-                    </h5>
-                  </div>
-                  <p className="card-text ">
-                    {p.description.substring(0, 60)}...
-                  </p>
-                  <div className="card-name-price">
-                    <button
-                      className="btn btn-info ms-1"
-                      onClick={() => navigate(`/product/${p.slug}`)}
-                    >
-                      More Details
-                    </button>
-                    <button
-                      className="btn btn-dark ms-1"
-                      onClick={() => {
-                        setCart([...cart, p]);
-                        localStorage.setItem(
-                          "cart",
-                          JSON.stringify([...cart, p])
-                        );
-                        toast.success("Item Added to cart");
-                      }}
-                    >
-                      ADD TO CART
-                    </button>
+          <h1 className="text-center text-success">All Products</h1>
+          <div className="d-flex flex-wrap justify-content-center">
+            {products
+              ?.filter((p) => p.sellerId !== auth?.user?.email)
+              .map((p) => (
+                <div className="card shadow m-2" key={p._id}>
+                  <img
+                    src={`/api/v1/product/product-photo/${p._id}`}
+                    className="card-img-top"
+                    alt={p.name}
+                  />
+                  <div className="card-body">
+                    <div className="card-name-price">
+                      <h5 className="card-title">
+                        {p.name.substring(0, 20)}...
+                      </h5>
+                      <h5 className="card-title card-price">
+                        {p.price.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </h5>
+                    </div>
+                    <p className="card-text ">
+                      {p.description.substring(0, 60)}...
+                    </p>
+                    <div className="card-name-price">
+                      <button
+                        className="btn btn-success ms-1"
+                        onClick={() => navigate(`/product/${p.slug}`)}
+                      >
+                        More Details
+                      </button>
+                      <button
+                        className="btn btn-dark ms-1"
+                        onClick={() => {
+                          setCart([...cart, p]);
+                          localStorage.setItem(
+                            "cart",
+                            JSON.stringify([...cart, p])
+                          );
+                          toast.success("Item Added to cart");
+                        }}
+                      >
+                        ADD TO CART
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           <div className="m-2 p-3">
             {products && products.length < total && (

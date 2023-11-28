@@ -73,7 +73,7 @@ const CreateProduct = () => {
             <SellerMenu />
           </div>
           <div className="col-md-9">
-            <h1>Create Product</h1>
+            <h1 className="text-success">Create Product</h1>
             <div className="m-1 w-75">
               <Select
                 bordered={false}
@@ -116,6 +116,12 @@ const CreateProduct = () => {
                 )}
               </div>
               <div className="mb-3">
+                <label
+                  className="text-success"
+                  style={{ fontWeight: "bold", paddingBottom: "2px" }}
+                >
+                  Name:
+                </label>
                 <input
                   type="text"
                   value={name}
@@ -125,6 +131,12 @@ const CreateProduct = () => {
                 />
               </div>
               <div className="mb-3">
+                <label
+                  className="text-success"
+                  style={{ fontWeight: "bold", paddingBottom: "2px" }}
+                >
+                  Description:
+                </label>
                 <textarea
                   type="text"
                   value={description}
@@ -135,6 +147,12 @@ const CreateProduct = () => {
               </div>
 
               <div className="mb-3">
+                <label
+                  className="text-success"
+                  style={{ fontWeight: "bold", paddingBottom: "2px" }}
+                >
+                  Price:
+                </label>
                 <input
                   type="number"
                   value={price}
@@ -144,6 +162,12 @@ const CreateProduct = () => {
                 />
               </div>
               <div className="mb-3">
+                <label
+                  className="text-success"
+                  style={{ fontWeight: "bold", paddingBottom: "2px" }}
+                >
+                  Quantity:
+                </label>
                 <input
                   type="number"
                   value={quantity}
@@ -153,6 +177,12 @@ const CreateProduct = () => {
                 />
               </div>
               <div className="mb-3">
+                <label
+                  className="text-success"
+                  style={{ fontWeight: "bold", paddingBottom: "2px" }}
+                >
+                  Shipping:
+                </label>
                 <Select
                   bordered={false}
                   placeholder="Select Shipping "
@@ -168,7 +198,7 @@ const CreateProduct = () => {
                 </Select>
               </div>
               <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleCreate}>
+                <button className="btn btn-success" onClick={handleCreate}>
                   CREATE PRODUCT
                 </button>
               </div>

@@ -28,7 +28,9 @@ const MyOrders = () => {
             <SellerMenu />
           </div>
           <div className="col-md-9">
-            <h1 className="text-center">My Orders</h1>
+            <h1 className="text-center" style={{ color: "#1c8c59" }}>
+              My Orders
+            </h1>
             {orders?.map((o, i) => {
               return (
                 <div className="border shadow">
@@ -45,12 +47,24 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{i + 1}</td>
-                        <td>{o?.status}</td>
-                        <td>{o?.buyer?.name}</td>
-                        <td>{moment(o?.createAt).fromNow()}</td>
-                        <td>{o?.payment.success ? "Success" : "Failed"}</td>
-                        <td>{o?.products?.length}</td>
+                        <td style={{ color: "green", fontWeight: "500" }}>
+                          {i + 1}
+                        </td>
+                        <td style={{ color: "green", fontWeight: "500" }}>
+                          {o?.status}
+                        </td>
+                        <td style={{ color: "green", fontWeight: "500" }}>
+                          {o?.buyer?.name}
+                        </td>
+                        <td style={{ color: "green", fontWeight: "500" }}>
+                          {moment(o?.createAt).fromNow()}
+                        </td>
+                        <td style={{ color: "green", fontWeight: "500" }}>
+                          {o?.payment.success ? "Success" : "Failed"}
+                        </td>
+                        <td style={{ color: "green", fontWeight: "500" }}>
+                          {o?.products?.length}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -73,6 +87,7 @@ const MyOrders = () => {
                           className="col-md-8"
                           style={{
                             backgroundColor: "rgba(128, 128, 128, 0.097)",
+                            // backgroundColor: "#Def2e4",
                           }}
                         >
                           <label style={{ fontWeight: "bold" }}>Name:</label>

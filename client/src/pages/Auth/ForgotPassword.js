@@ -37,7 +37,7 @@ const ForgotPasssword = () => {
     <Layout title={"Forgot Password "}>
       <div className="form-container ">
         <form onSubmit={handleSubmit}>
-          <h4 className="title">RESET PASSWORD</h4>
+          <h4 className="title text-success">RESET PASSWORD</h4>
 
           <div className="mb-3">
             <input

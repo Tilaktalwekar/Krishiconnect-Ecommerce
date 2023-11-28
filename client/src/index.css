@@ -10,24 +10,25 @@
 
 /* //navbar CSS */
 .navbar{
-  background-color: #64CCC5;
+  background-color: #1c8c59;
   font-family: 'Poppins', sans-serif;
   font-size: 17px;
   line-height: 26px;
   text-transform: uppercase;
   box-shadow: 0 8px 6px -6px gray ;
   --webkit-box-shadow: 0 8px 6px -6px gray ;
-  border-bottom: 0 solid rgb(0, 0, 0) !important;
+  color: rgb(255, 253, 253) ;
+  border-bottom: 0 solid rgb(255, 255, 255) !important;
 }
 
 .nav-link {
-  font-weight: 300 !important;
-  color: rgb(5, 4, 4);
+  font-weight: 400 !important;
+  color: rgb(255, 252, 252) !important;
 }
-.active{
-  color: white;
-  font-weight: 800 !important;
-  border-bottom: 3px solid rgb(0, 0, 0);
+.nav-link.active {
+  color: rgb(252, 251, 251);
+  font-weight: 800;
+  border-bottom: 3px solid rgb(251, 249, 249);
 }
 .navbar-brand{
   font-weight: 700;
@@ -120,9 +121,10 @@
   padding: 40px 0px;
   font-size: 24px;
   text-transform: uppercase;
+  color: #1c8c59;
 }
 .cat-btn:hover {
-  background-color: #434343;
+  background-color: #1c8c59;
   color: white;
 }
 /* ================
@@ -134,7 +136,18 @@
 }
 
 .dashboard-menu h4 {
-  background-color: #434343 !important;
+  background-color: #1c8c59 !important;
   color: white;
   padding: 20px 0px;
+}
+ 
+.link1.active {
+  background-color: rgb(30, 180, 112);
+  border-color: #1c8c59;
+  font-weight: bold;
+  color: #ffffff;
+}
+.abctabs{
+  font-weight: 300 !important;
+  color: rgb(255, 252, 252);
 }

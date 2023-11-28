@@ -109,7 +109,7 @@ const UpdateProduct = () => {
             <SellerMenu />
           </div>
           <div className="col-md-9">
-            <h1>Update Product</h1>
+            <h1 className="text-success">Update Product</h1>
             <div className="m-1 w-75">
               <Select
                 bordered={false}
@@ -215,7 +215,7 @@ const UpdateProduct = () => {
                 </Select>
               </div>
               <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleUpdate}>
+                <button className="btn btn-success" onClick={handleUpdate}>
                   UPDATE PRODUCT
                 </button>
               </div>

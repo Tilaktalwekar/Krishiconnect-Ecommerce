@@ -344,7 +344,8 @@ export const braintreeTokenController = async (req, res) => {
 //payment
 export const brainTreePaymentController = async (req, res) => {
   try {
-    const { nonce, cart } = req.body;
+    const { nonce, cart, sellerid } = req.body;
+    console.log(sellerid);
     let total = 0;
     cart.map((i) => {
       total += i.price;
@@ -363,7 +364,7 @@ export const brainTreePaymentController = async (req, res) => {
             products: cart,
             payment: result,
             buyer: req.user._id,
-            // email:req.user._id,
+            sellerid: sellerid,
           }).save();
           res.json({ ok: true });
         } else {

@@ -14,6 +14,7 @@
   }
   .home-page .card {
     background-color: rgba(128, 128, 128, 0.097);
+    /* background-color: #e3fdeb; */
     width: 18rem;
   }
   .home-page .card-name-price {
@@ -51,7 +52,7 @@
   ============== */
   .filters h4 {
     margin-top: 100px;
-    color: gray !important;
+    color: #ffffff !important;
     border-bottom: 1px solid rgba(128, 128, 128, 0.337);
   }
   

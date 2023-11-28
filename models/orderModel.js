@@ -9,6 +9,9 @@ const orderSchema = new mongoose.Schema(
       },
     ],
     payment: {},
+    sellerid: {
+      type: String,
+    },
     buyer: {
       type: mongoose.ObjectId,
       ref: "users",

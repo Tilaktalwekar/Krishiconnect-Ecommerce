@@ -27,39 +27,45 @@ const Products = () => {
   }, []);
   return (
     <Layout>
-      <div className="row dashboard">
-        <div className="col-md-3">
-          <SellerMenu />
-        </div>
-        <div className="col-md-9 ">
-          <h1 className="text-center">All Products List</h1>
-          <div className="d-flex flex-wrap">
-          {products?.filter((p) => p.sellerId === (auth?.user?.email)).map((p) => (
-              <Link
-                key={p._id}
-                to={`/dashboard/seller/product/${p.slug}`}
-                className="product-link"
-              >
-                <div
-                  className="card m-2"
-                  style={{
-                    width: "18rem",
-                    backgroundColor: "rgba(128, 128, 128, 0.097)",
-                    height: "30rem",
-                  }}
-                >
-                  <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top"
-                    style={{ height: "20rem" }}
-                    alt={p.name}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{p.name.substring(0, 50)}...</h5>
-                  </div>
-                </div>
-              </Link>
-            ))}
+      <div className="container-flui p-3 m-3 dashboard">
+        <div className="row ">
+          <div className="col-md-3">
+            <SellerMenu />
+          </div>
+          <div className="col-md-9 ">
+            <h1 className="text-center text-success">All Products List</h1>
+            <div className="d-flex flex-wrap">
+              {products
+                ?.filter((p) => p.sellerId === auth?.user?.email)
+                .map((p) => (
+                  <Link
+                    key={p._id}
+                    to={`/dashboard/seller/product/${p.slug}`}
+                    className="product-link"
+                  >
+                    <div
+                      className="card m-2"
+                      style={{
+                        width: "18rem",
+                        backgroundColor: "rgba(128, 128, 128, 0.097)",
+                        height: "30rem",
+                      }}
+                    >
+                      <img
+                        src={`/api/v1/product/product-photo/${p._id}`}
+                        className="card-img-top"
+                        style={{ height: "20rem" }}
+                        alt={p.name}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          {p.name.substring(0, 50)}...
+                        </h5>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
           </div>
         </div>
       </div>

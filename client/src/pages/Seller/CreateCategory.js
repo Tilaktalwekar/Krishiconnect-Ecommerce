@@ -93,7 +93,7 @@ const CreateCategory = () => {
             <SellerMenu />
           </div>
           <div className="col-md-9">
-            <h1>Manage Category</h1>
+            <h1 className="text-success">Manage Category</h1>
             <div className="p-3 w-50">
               <CategoryForm
                 handleSubmit={handleSubmit}
@@ -104,7 +104,11 @@ const CreateCategory = () => {
             <div className="w-75">
               <table className="table">
                 <thead>
-                  <tr>
+                  <tr
+                    style={{
+                      borderBottom: "2px solid grey",
+                    }}
+                  >
                     <th scope="col">Name</th>
                     <th scope="col">Actions</th>
                   </tr>
@@ -113,10 +117,15 @@ const CreateCategory = () => {
                   {categories?.map((c) => (
                     <>
                       <tr>
-                        <td key={c._id}>{c.name}</td>
+                        <td
+                          style={{ color: "#1c8c59", fontWeight: "550" }}
+                          key={c._id}
+                        >
+                          {c.name}
+                        </td>
                         <td>
                           <button
-                            className="btn btn-primary ms-2"
+                            className="btn btn-success ms-2"
                             onClick={() => {
                               setVisible(true);
                               setUpdatedName(c.name);

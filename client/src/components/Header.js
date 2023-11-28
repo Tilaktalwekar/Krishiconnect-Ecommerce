@@ -37,7 +37,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <Link to="/" className="navbar-brand">
-            🛒 KrishiConnect.
+              🛒<span style={{ color: "white" }}>Krishi</span>Connect.
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />
@@ -51,7 +51,6 @@ const Header = () => {
                   className="nav-link dropdown-toggle"
                   to={"/categories"}
                   data-bs-toggle="dropdown"
-                  style={{color:"#000"}}
                 >
                   Categories
                 </Link>
@@ -91,7 +90,7 @@ const Header = () => {
                 <>
                   <li className="nav-item dropdown">
                     <NavLink
-                      className="nav-link dropdown-toggle"
+                      className="nav-link dropdown-toggle abctabs"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
@@ -125,7 +124,12 @@ const Header = () => {
               )}
               <li className="nav-item">
                 <NavLink to="/cart" className="nav-link">
-                  <Badge count={cart?.length} showZero offset={[10, -5]}>
+                  <Badge
+                    className="text-light"
+                    count={cart?.length}
+                    showZero
+                    offset={[10, -5]}
+                  >
                     Cart
                   </Badge>
                 </NavLink>
